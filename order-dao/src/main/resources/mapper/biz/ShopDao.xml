@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.ShopDao">
+
+    <resultMap type="top.pippen.order.bean.model.biz.ShopEntity" id="bizShopMap">
+        <result property="id" column="id"/>
+        <result property="shopName" column="shop_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="shopOwner" column="shop_owner"/>
+        <result property="mobile" column="mobile"/>
+        <result property="shopNotice" column="shop_notice"/>
+        <result property="intro" column="intro"/>
+        <result property="tel" column="tel"/>
+        <result property="shopLat" column="shop_lat"/>
+        <result property="shopLng" column="shop_lng"/>
+        <result property="shopAddress" column="shop_address"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="area" column="area"/>
+        <result property="shopLogo" column="shop_logo"/>
+        <result property="shopPhotos" column="shop_photos"/>
+        <result property="openTime" column="open_time"/>
+        <result property="shopStatus" column="shop_status"/>
+        <result property="creator" column="creator"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updater" column="updater"/>
+        <result property="updateDate" column="update_date"/>
+    </resultMap>
+
+    <update id="updateShopStatus">
+        update biz_shop
+            set shop_status=#{shopStatus,jdbcType=INTEGER}
+        where id=#{shopId,jdbcType=BIGINT}
+    </update>
+</mapper>

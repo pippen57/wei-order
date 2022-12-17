@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.OrderItemDao">
+
+    <resultMap type="top.pippen.order.bean.model.biz.OrderItemEntity" id="orderItemMap">
+        <result property="id" column="id"/>
+        <result property="shopId" column="shop_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="skuId" column="sku_id"/>
+        <result property="productCount" column="product_count"/>
+        <result property="productName" column="product_name"/>
+        <result property="skuName" column="sku_name"/>
+        <result property="pic" column="pic"/>
+        <result property="price" column="price"/>
+        <result property="userId" column="user_id"/>
+        <result property="productTotalAmount" column="product_total_amount"/>
+        <result property="basketDate" column="basket_date"/>
+    </resultMap>
+
+
+</mapper>

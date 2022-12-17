@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.ProductPropValueDao">
+
+    <resultMap type="top.pippen.order.bean.model.biz.ProductPropValueEntity" id="productPropValueMap">
+        <result property="id" column="id"/>
+        <result property="propValue" column="prop_value"/>
+        <result property="propId" column="prop_id"/>
+    </resultMap>
+
+    <delete id="deleteByPropId">
+        delete from biz_product_prop_value where prop_id = #{propId}
+    </delete>
+</mapper>

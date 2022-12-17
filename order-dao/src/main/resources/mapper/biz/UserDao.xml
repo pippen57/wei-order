@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.UserDao">
+    <select id="getUserByOpenId" resultType="top.pippen.order.bean.model.biz.UserEntity">
+        select *
+        from biz_wx_user
+        where open_id = #{openId,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getUserByUserId" resultType="top.pippen.order.bean.model.biz.UserEntity">
+        select *
+        from biz_wx_user
+        where id = #{value}
+    </select>
+
+    <update id="updateUserInfo">
+        update biz_wx_user
+        <set>
+            <if test="username != null">
+                username=#{username,jdbcType=VARCHAR},
+            </if>
+            <if test="avatar != null">
+                avatar=#{avatar,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                mobile=#{mobile,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where id=#{id,jdbcType=BIGINT}
+    </update>
+</mapper>

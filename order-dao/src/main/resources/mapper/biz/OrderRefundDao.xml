@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.OrderRefundDao">
+
+    <resultMap type="top.pippen.order.bean.model.biz.OrderRefundEntity" id="orderRefundMap">
+        <result property="id" column="id"/>
+        <result property="shopId" column="shop_id"/>
+        <result property="orderId" column="order_id"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="orderAmount" column="order_amount"/>
+        <result property="orderItemId" column="order_item_id"/>
+        <result property="refundNumber" column="refund_number"/>
+        <result property="payNo" column="pay_no"/>
+        <result property="refundId" column="refund_id"/>
+        <result property="payType" column="pay_type"/>
+        <result property="payTypeName" column="pay_type_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="goodsNum" column="goods_num"/>
+        <result property="refundAmount" column="refund_amount"/>
+        <result property="returnMoneySts" column="return_money_sts"/>
+        <result property="createTime" column="create_time"/>
+        <result property="refundTime" column="refund_time"/>
+        <result property="buyerMsg" column="buyer_msg"/>
+        <result property="fundsAccount" column="funds_account"/>
+        <result property="userReceivedAccount" column="user_received_account"/>
+    </resultMap>
+
+
+</mapper>

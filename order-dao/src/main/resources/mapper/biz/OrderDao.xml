@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.OrderDao">
+    <resultMap type="top.pippen.order.bean.model.biz.OrderEntity" id="orderMap">
+        <result property="id" column="id"/>
+        <result property="shopId" column="shop_id"/>
+        <result property="prodName" column="prod_name"/>
+        <result property="userId" column="user_id"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="total" column="total"/>
+        <result property="payType" column="pay_type"/>
+        <result property="remarks" column="remarks"/>
+        <result property="status" column="status"/>
+        <result property="productNums" column="product_nums"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="payTime" column="pay_time"/>
+        <result property="finallyTime" column="finally_time"/>
+        <result property="cancelTime" column="cancel_time"/>
+        <result property="isPayed" column="is_payed"/>
+        <result property="deleteStatus" column="delete_status"/>
+        <result property="refundStatus" column="refund_status"/>
+        <result property="closeType" column="close_type"/>
+        <result property="orderSource" column="order_source"/>
+        <result property="mealTime" column="meal_time"/>
+        <result property="mealNumber" column="meal_number"/>
+        <result property="mealType" column="meal_type"/>
+    </resultMap>
+
+    <update id="obligationOrder">
+        update biz_order
+        set update_time= NOW(),
+            cancel_time= NOW(),
+            close_type=1,
+            status=3
+        where status = 1
+          and create_time &lt; #{time,jdbcType=TIMESTAMP}
+    </update>
+
+    <select id="findByOrderNumber" resultMap="orderMap">
+        SELECT * from biz_order WHERE order_number=#{orderNumber,jdbcType=VARCHAR}
+    </select>
+
+    <select id="getObligationOrder" resultMap="orderMap">
+        SELECT * FROM biz_order WHERE status = 1
+                                  and create_time &lt; #{time,jdbcType=TIMESTAMP}
+    </select>
+</mapper>

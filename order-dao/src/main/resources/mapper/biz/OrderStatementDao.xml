@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.pippen.order.dao.biz.OrderStatementDao">
+
+    <resultMap type="top.pippen.order.bean.model.biz.OrderStatementEntity" id="orderStatementMap">
+        <result property="id" column="id"/>
+        <result property="payNo" column="pay_no"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="payType" column="pay_type"/>
+        <result property="payTypeName" column="pay_type_name"/>
+        <result property="payAmount" column="pay_amount"/>
+        <result property="isClearing" column="is_clearing"/>
+        <result property="userId" column="user_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="clearingTime" column="clearing_time"/>
+        <result property="payStatus" column="pay_status"/>
+    </resultMap>
+
+
+</mapper>
