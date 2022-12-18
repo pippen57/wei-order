@@ -64,13 +64,22 @@ wei-order
 
    微信支付使用的是开源的微信SDK [WxJava](https://github.com/Wechat-Group/WxJava)可以参考这个开源项目的说明文件进行配置。
 
-2. 前端项目路径
+2. 后端地址：
 
-3. 后台系统路径
+   - Github: https://github.com/pippen57/wei-order
+   - Gitee: https://gitee.com/pippen57/wei-order
 
-4. 小程序项目路径
+3. 后端UI:
 
-**项目部署流程：**
+   - Github: https://github.com/pippen57/wei-order-ui
+   - Gitee: https://gitee.com/pippen57/wei-order-ui
+
+4. 小程序：
+
+   - Github: https://github.com/pippen57/wei-order-mini
+   - Gitee: https://gitee.com/pippen57/wei-order-mini
+
+### 项目部署流程
 
 - 通过git下载源码
 - idea需安装lombok插件，不然会提示找不到entity的get set方法
@@ -84,7 +93,7 @@ wei-order
 - 再启动前端项目，前端地址：https://gitee.com/renrenio/renren-ui
 - 账号密码：admin/admin
 
-**和我交流**
+### 和我交流
 
 扫描下方二维码添加微信，备注【皮蓬】加快通过速度。
 
